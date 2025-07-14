@@ -28,4 +28,3 @@ Deploy to Render, Railway, or similar. Submit the deployed link and GitHub repo 
 
 ---
 
-For more details, see the project instructions or contact Fetan System Technology.
