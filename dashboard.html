@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Task Manager</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" id="search" placeholder="Search for tasks" />
+            </div>
+            <div class="profile" id="profile"></div>
+            <button class="logout-btn" onclick="logout()" title="Logout">&#x21bb;</button>
+        </div>
+        <div id="no-task" class="no-task" style="display:none;">
+            <h2>No Task Yet</h2>
+            <p>No tasks created yet. You can start by clicking the add new button below to create one</p>
+            <button class="add-btn" onclick="showTaskForm()">+ Add New</button>
+        </div>
+        <div id="task-tabs">
+            <button id="pending-tab" class="tab-btn active">Pending</button>
+            <button id="completed-tab" class="tab-btn">Completed</button>
+        </div>
+        <form id="task-form" style="display:none; margin-bottom:2rem;">
+            <input type="text" id="task-name" placeholder="New Task Name" required />
+            <button class="add-btn" type="submit">Add Task</button>
+        </form>
+        <ul id="tasks"></ul>
+    </div>
+    <div id="add-task-modal">
+        <div>
+            <h3>Create New Task</h3>
+            <p>Organize your productivity effortlessly by creating a new task. Name it whatever helps you stay on top of
+                your game!</p>
+            <form id="modal-task-form">
+                <input type="text" id="modal-task-name" placeholder="Task name" required />
+                <button class="add-btn" type="submit">Create Task</button>
+            </form>
+            <button class="cancel-btn" onclick="closeAddTaskModal()">Cancel</button>
+        </div>
+    </div>
+    <div id="edit-task-modal">
+        <div>
+            <h3>Edit Task</h3>
+            <p>Update your task name below to keep your list organized.</p>
+            <form id="modal-edit-form">
+                <input type="text" id="modal-edit-task-name" placeholder="Task name" required />
+                <button class="add-btn" type="submit">Save Changes</button>
+            </form>
+            <button class="cancel-btn" onclick="closeEditTaskModal()">Cancel</button>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
